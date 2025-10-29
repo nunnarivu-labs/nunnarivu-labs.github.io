@@ -1,29 +1,90 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <title>Nunnarivu Labs</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="./w3.css">
-<link rel="stylesheet" href="./google-fonts.css">
 <style>
-body,h1 {font-family: "Raleway", sans-serif}
-body, html {height: 100%}
-.bgimg {
-  background-image: url('./forestbridge.jpg');
-  min-height: 100%;
-  background-position: center;
-  background-size: cover;
-}
+    body {
+        font-family: sans-serif;
+        margin: 0;
+        background-color: #f4f4f4;
+        display: flex;
+        min-height: 100vh;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 0.3s ease;
+    }
+
+    .image-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        gap: 30px;
+    }
+
+    .image-link {
+        display: block;
+        text-decoration: none;
+        background-color: #ffffff;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        border-radius: 8px;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+        max-width: 400px;
+        width: 100%;
+    }
+
+    .image-link:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    .image-link img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    @media (max-width: 768px) {
+        .image-container {
+            flex-direction: column;
+        }
+
+        .image-link {
+            max-width: 90%;
+        }
+    }
+
+    @media (prefers-color-scheme: dark) {
+        body {
+            background-color: #121212;
+        }
+
+        .image-link {
+            background-color: #1e1e1e;
+            box-shadow: none;
+            border: 1px solid #333;
+        }
+
+        .image-link:hover {
+            border-color: #555;
+            box-shadow: none;
+        }
+    }
 </style>
 </head>
 <body>
 
-<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
-  <div class="w3-display-middle">
-    <h1 class="w3-jumbo w3-animate-top">COMING SOON</h1>
-  </div>
+<div class="image-container">
+  <a href="https://ishtar.nunnarivulabs.in" class="image-link" title="Go to the Ishtar page">
+    <img src="ishtar.png" alt="An AI chatbot">
+  </a>
+  <a href="https://slate.nunnarivulabs.in" class="image-link" title="Go to the Slate page">
+    <img src="slate.png" alt="A simple note-taking app">
+  </a>
 </div>
-
 </body>
 </html>
